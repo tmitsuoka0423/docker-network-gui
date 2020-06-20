@@ -3,10 +3,13 @@ import Home from '../components/Home';
 
 const { exec } = require('child_process');
 
-export default class HomePage extends React.Component {
+export default class HomePage extends React.Component<
+  {},
+  { list: Array<object> }
+> {
   static async listDockerNetwork(): Promise<Array<object>> {
     return new Promise((resolve, reject) => {
-      exec('docker network ls', (err, stdout) => {
+      exec('docker network ls', (err: ayn, stdout: any) => {
         let result: Array<object> = [];
 
         if (err) {
@@ -18,7 +21,7 @@ export default class HomePage extends React.Component {
           .replace(/.*\n/, '')
           .replace(/ +/g, ' ')
           .split('\n')
-          .map(row => {
+          .map((row: any) => {
             const cols = row.split(' ');
 
             return {
@@ -33,16 +36,18 @@ export default class HomePage extends React.Component {
     });
   }
 
-  private dockerNetworkList: Array<object> = [];
+  constructor(props: any) {
+    super(props);
+    this.state = { list: [] };
+  }
 
   async componentDidMount() {
-    console.log('start componentDidMount');
-    this.dockerNetworkList = await HomePage.listDockerNetwork();
-    console.log(this.dockerNetworkList);
-    console.log('end componentDidMount');
+    const dockerNetworkList = await HomePage.listDockerNetwork();
+    this.setState({ list: dockerNetworkList });
   }
 
   render() {
-    return <Home dockerNetworkList={this.dockerNetworkList} />;
+    const { list } = this.state;
+    return <Home dockerNetworkList={list} />;
   }
 }
