@@ -9,7 +9,7 @@ export default class HomePage extends React.Component<
 > {
   static async listDockerNetwork(): Promise<Array<object>> {
     return new Promise((resolve, reject) => {
-      exec('docker network ls', (err: ayn, stdout: any) => {
+      exec('docker network ls', (err: any, stdout: any) => {
         let result: Array<object> = [];
 
         if (err) {
