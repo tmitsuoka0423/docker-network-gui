@@ -28,7 +28,7 @@ export default class HomePage extends React.Component<
               networkId: cols[0],
               name: cols[1],
               driver: cols[2],
-              scope: cols[3]
+              scope: cols[3],
             };
           });
         resolve(result);

@@ -4,7 +4,7 @@ import routes from '../constants/routes.json';
 import styles from './Home.css';
 
 export default function Home({ dockerNetworkList }: any) {
-  const linkList = dockerNetworkList.map(dockerNetwork => (
+  const linkList = dockerNetworkList.map((dockerNetwork) => (
     <div key={dockerNetwork.name}>
       <Link to={routes.DETAIL}>{dockerNetwork.name}</Link>
     </div>
