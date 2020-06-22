@@ -3,12 +3,7 @@ import IUser from '../states/IUser';
 import CountButton from './CountButton';
 import TextBox from './TextBox';
 
-interface IProps {
-  name: string;
-  count: number;
-}
-
-const UserForm: React.FC<IUser> = (props: IProps) => {
+const UserForm: React.FC<IUser> = (props: IUser) => {
   const { name, count } = props;
 
   const onNameChange = useCallback((value: string) => {
