@@ -1,18 +1,22 @@
 import React, { useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeUserAction } from '../actions/UserActions';
+import { IState } from '../states/IStates';
 import IUser from '../states/IUser';
 import CountButton from './CountButton';
 import TextBox from './TextBox';
 
-const UserForm: React.FC<IUser> = (props: IUser) => {
-  const { name, count } = props;
+const UserForm: React.FC = () => {
+  const { name, count } = useSelector<IState, IUser>(a => a.user);
+  const dispatch = useDispatch();
 
   const onNameChange = useCallback((value: string) => {
-    // TODO 後で実装
+    dispatch(changeUserAction({ name: value }));
   }, []);
 
   const onCountClick = useCallback(() => {
-    // TODO 後で実装
-  }, []);
+    dispatch(changeUserAction({ count: count + 1 }));
+  }, [count]);
 
   return (
     <div>
