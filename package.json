@@ -31,7 +31,7 @@
   },
   "name": "docker-network-gui",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.ts",
   "scripts": {
     "start": "electron ./dist/main.js",
     "tsc": "tsc",
