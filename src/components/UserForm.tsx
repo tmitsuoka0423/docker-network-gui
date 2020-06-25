@@ -20,12 +20,12 @@ const UserForm: React.FC = () => {
 
   return (
     <div>
-      <p>
-        <TextBox value={name} label="ユーザー名" onChangeText={onNameChange} />
-      </p>
-      <p>
+      <div>
+        <TextBox type="text" value={name} label="ユーザー名" onChangeText={onNameChange} />
+      </div>
+      <div>
         <CountButton count={count} label="訪問" onClick={onCountClick} />
-      </p>
+      </div>
     </div>
   );
 };

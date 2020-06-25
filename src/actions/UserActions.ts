@@ -1,5 +1,5 @@
 import { actionCreatorFactory } from 'typescript-fsa';
-import { IUser } from '../states/IUser';
+import IUser from '../states/IUser';
 
 const actionCreator = actionCreatorFactory('user-action');
 

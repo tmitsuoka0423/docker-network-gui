@@ -27,3 +27,6 @@ rules:
   # prettier のチェックでErrorとするための設定。
   prettier/prettier:
     - error
+  # TypeScriptで誤検知されるLintルールを上書き
+  'no-unused-vars': off
+  '@typescript-eslint/no-unused-vars': error
