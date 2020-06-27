@@ -6,6 +6,7 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-redux": "^7.1.9",
     "@types/redux": "^3.6.0",
+    "@types/styled-components": "^5.1.0",
     "@typescript-eslint/eslint-plugin": "^3.3.0",
     "@typescript-eslint/parser": "^3.3.0",
     "electron": "^9.0.4",
@@ -29,6 +30,7 @@
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
+    "styled-components": "^5.1.1",
     "typescript-fsa-reducers": "^1.2.1"
   },
   "name": "docker-network-gui",
