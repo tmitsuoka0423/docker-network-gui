@@ -42,7 +42,7 @@
   "version": "1.0.0",
   "main": "main.ts",
   "scripts": {
-    "start": "webpack && electron ./dist/main.js",
+    "start": "tsc && webpack && electron ./dist/main.js",
     "tsc": "tsc",
     "watch": "tsc -w",
     "build:render": "webpack"
