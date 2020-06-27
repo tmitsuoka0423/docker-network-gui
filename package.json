@@ -17,7 +17,10 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.0",
     "html-webpack-plugin": "^4.3.0",
+    "node-sass": "^4.14.1",
+    "postcss-loader": "^3.0.0",
     "prettier": "^2.0.5",
+    "sass-loader": "^8.0.2",
     "ts-loader": "^7.0.5",
     "typescript": "^3.9.5",
     "typescript-fsa": "^3.0.0",
@@ -25,11 +28,13 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "css-loader": "^3.6.0",
     "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
+    "style-loader": "^1.2.1",
     "styled-components": "^5.1.1",
     "typescript-fsa-reducers": "^1.2.1"
   },
