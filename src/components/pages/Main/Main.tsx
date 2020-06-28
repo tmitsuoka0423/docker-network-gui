@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { exec } from 'child_process';
 import styles from './styles.scss';
-import Button from '../atoms/Button/Button';
+import Button from '../../atoms/Button/Button';
 
 const Main: React.FC = () => {
   let list;

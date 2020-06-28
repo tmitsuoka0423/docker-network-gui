@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Main from './components/Main/Main';
+import Main from './components/pages/Main/Main';
 
 const container = document.getElementById('contents');
 
