@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { exec } from 'child_process';
 import styles from './styles.scss';
 import Button from '../../atoms/Button/Button';
@@ -44,11 +45,20 @@ const Main: React.FC = () => {
     list = <div>no docker network found</div>;
   } else {
     list = dockerNetworkList.map(dockerNetwork => {
-      return <Button label={dockerNetwork.name} key={dockerNetwork.id}></Button>;
+      return (
+        <Link to={`/detail/${dockerNetwork.name}`} key={dockerNetwork.id}>
+          <Button label={dockerNetwork.name}></Button>
+        </Link>
+      );
     });
   }
 
-  return <div className={styles.main}>{list}</div>;
+  return (
+    <div className={styles.main}>
+      <div>$ docker network ls</div>
+      <div>{list}</div>
+    </div>
+  );
 };
 
 export default Main;
