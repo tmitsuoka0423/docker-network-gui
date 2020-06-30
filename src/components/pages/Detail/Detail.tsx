@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { exec } from 'child_process';
 
+import Card from '../../atoms/Card/Card';
+
 const Detail: React.FC = () => {
   const { id } = useParams();
   const history = useHistory();
@@ -38,10 +40,9 @@ const Detail: React.FC = () => {
 
   const detailList = dockerNetworkDetailList.map(dockerNetworkDetail => {
     return (
-      <div key={dockerNetworkDetail.endpointId}>
-        <div>Name: {dockerNetworkDetail.name}</div>
-        <div>IPアドレス: {dockerNetworkDetail.ipv4}</div>
-      </div>
+      <Card title={dockerNetworkDetail.name} key={dockerNetworkDetail.endpointId}>
+        {dockerNetworkDetail.ipv4}
+      </Card>
     );
   });
 
@@ -55,7 +56,7 @@ const Detail: React.FC = () => {
           ←
         </button>
       </div>
-      <div>{id} detail page</div>
+      <div>$ docker network inspect {id}</div>
       <div>{detailList}</div>
     </div>
   );
